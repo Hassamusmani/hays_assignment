@@ -29,42 +29,55 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+1️⃣ Header.js (Controls Grid Size)
+📍 Functionality
+Allows users to set the number of rows and columns via input fields.
+Updates rows and cols in GridContext when the input changes.
+📍 Key Interactions
+User Inputs a New Row or Column Count
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The onChangeHandler updates rows or cols in context.
+This triggers a re-render in RasterGrid and CellList, updating the grid size.
+Context API Integration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Uses useGrid() to access rows, cols, setRows, and setCols.
+Ensures state updates propagate to all dependent components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2️⃣ CellList.js (Manages Cell Visibility)
+📍 Functionality
+Displays a list of grid cells with toggleable visibility.
+Clicking a cell toggles its visibility in GridContext.
+📍 Key Interactions
+User Clicks on a Cell
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Calls toggleVisibility(index), which updates the visibility state.
+The change reflects in both CellList and RasterGrid.
+Visibility State Management
 
-## Learn More
+Uses useGrid() to get visibility and toggleVisibility().
+Dynamically assigns a class based on visibility (active or hidden).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3️⃣ RasterGrid.js (Displays the Grid)
+📍 Functionality
+Creates a grid layout based on rows and cols.
+Shows/hides grid cells based on visibility state.
+📍 Key Interactions
+User Changes Grid Size (Header Interaction)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+rows and cols update, dynamically adjusting the grid.
+User Toggles Visibility (CellList Interaction)
 
-### Code Splitting
+visibility array determines whether each grid cell is visible.
+If visibility[i] === false, the cell is hidden via CSS.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4️⃣ Home.js (Page Layout)
+📍 Functionality
+Wraps CellList and RasterGrid in a semantic <main> container.
+Ensures proper alignment and interaction between components.
+📍 Key Interactions
+State Changes in Header
 
-### Analyzing the Bundle Size
+Updates the grid and cell list dynamically.
+Clicking a Cell in CellList
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Updates visibility, affecting the corresponding grid cell.
