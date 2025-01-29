@@ -1,18 +1,15 @@
 import React from "react";
+
+import styles from "./Home.module.css";
 import CellList from "../components/CellList";
 import RasterGrid from "../components/RasterGrid";
 
-const Home = ({ rows, cols, visibility, toggleVisibility, handleHover }) => {
+const Home = () => {
   return (
-    <section className="container">
-      <CellList
-        rows={rows}
-        cols={cols}
-        visibility={visibility}
-        toggleVisibility={toggleVisibility}
-      />
-      <RasterGrid rows={rows} cols={cols} visibility={visibility} />
-    </section>
+    <main className={styles.container}>
+      <CellList />
+      <RasterGrid />
+    </main>
   );
 };
 

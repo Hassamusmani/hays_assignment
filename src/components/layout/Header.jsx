@@ -2,8 +2,11 @@ import React from "react";
 
 import styles from "./Header.module.css";
 import CustomInput from "../common/CustomInput";
+import { useGrid } from "../../store/GridContext";
 
-const Header = ({ rows, cols, rowHandler, colHandler }) => {
+const Header = () => {
+  const { rows, cols, setRows, setCols } = useGrid();
+
   return (
     <header className={styles.header}>
       <h1>The Raster Grid</h1>
@@ -13,14 +16,14 @@ const Header = ({ rows, cols, rowHandler, colHandler }) => {
           name="rows"
           type="number"
           value={rows}
-          onChangeHandler={rowHandler}
+          onChangeHandler={setRows}
         />
         <CustomInput
           label="Cols"
           name="cols"
           type="number"
           value={cols}
-          onChangeHandler={colHandler}
+          onChangeHandler={setCols}
         />
       </form>
     </header>

@@ -27,6 +27,11 @@
   justify-content: center;
 }
 
+.grid_cell:hover {
+  border: 0.2rem solid #2973b2;
+  box-shadow: 0 0 1.2rem rgba(41, 115, 178, 0.5);
+}
+
 .hide {
   color: #000;
   background-color: #f2efe7;
