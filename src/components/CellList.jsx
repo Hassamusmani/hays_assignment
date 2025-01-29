@@ -1,3 +1,5 @@
+import { Eye, EyeOff } from "lucide-react";
+
 import { useGrid } from "../store/GridContext";
 import styles from "./CellList.module.css";
 
@@ -20,7 +22,13 @@ const CellList = () => {
           onClick={() => toggleVisibility(index)}
         >
           <span>{cell}</span>
-          <span>{visibility[index] ? "👁️" : "🚫"}</span>
+          <span>
+            {visibility[index] ? (
+              <Eye size={20} />
+            ) : (
+              <EyeOff size={20} fill="red" />
+            )}
+          </span>
         </div>
       ))}
     </aside>

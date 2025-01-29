@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "lucide-react";
 
 import styles from "./Header.module.css";
 import CustomInput from "../common/CustomInput";
