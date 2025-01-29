@@ -1,0 +1,28 @@
+.form_control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: #f2efe7;
+}
+
+.form_control label {
+  font-size: 1.6rem;
+}
+
+.form_control input {
+  height: 4rem;
+  width: 25rem;
+
+  padding: 1rem;
+
+  border: 0.1rem solid #2973b2;
+  border-radius: 0.5rem;
+
+  outline: none;
+}
+
+.form_control input:focus {
+  border: 0.2rem solid #2973b2;
+  box-shadow: 0 0 8px rgba(41, 115, 178, 0.5);
+}
