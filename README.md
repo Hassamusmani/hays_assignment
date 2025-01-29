@@ -29,7 +29,8 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-1️⃣ Header.js (Controls Grid Size)
+### 1️⃣ Header.js (Controls Grid Size)
+
 📍 Functionality
 Allows users to set the number of rows and columns via input fields.
 Updates rows and cols in GridContext when the input changes.
@@ -43,7 +44,8 @@ Context API Integration
 Uses useGrid() to access rows, cols, setRows, and setCols.
 Ensures state updates propagate to all dependent components.
 
-2️⃣ CellList.js (Manages Cell Visibility)
+### 2️⃣ CellList.js (Manages Cell Visibility)
+
 📍 Functionality
 Displays a list of grid cells with toggleable visibility.
 Clicking a cell toggles its visibility in GridContext.
@@ -57,7 +59,8 @@ Visibility State Management
 Uses useGrid() to get visibility and toggleVisibility().
 Dynamically assigns a class based on visibility (active or hidden).
 
-3️⃣ RasterGrid.js (Displays the Grid)
+### 3️⃣ RasterGrid.js (Displays the Grid)
+
 📍 Functionality
 Creates a grid layout based on rows and cols.
 Shows/hides grid cells based on visibility state.
@@ -70,7 +73,8 @@ User Toggles Visibility (CellList Interaction)
 visibility array determines whether each grid cell is visible.
 If visibility[i] === false, the cell is hidden via CSS.
 
-4️⃣ Home.js (Page Layout)
+### 4️⃣ Home.js (Page Layout)
+
 📍 Functionality
 Wraps CellList and RasterGrid in a semantic <main> container.
 Ensures proper alignment and interaction between components.
